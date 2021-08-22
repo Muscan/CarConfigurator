@@ -36,7 +36,7 @@ namespace CarConfigurator
             }
             else if (adresaEmpty(txtBoxAdresa) == true)
             {
-                MessageBox.Show("Enter an address!");
+                MessageBox.Show("Enter an customer name!");
             }
             else if (isDieselSelected(rdoBtnDiesel, rdoBtnBenzina) == false)
             {
@@ -49,7 +49,7 @@ namespace CarConfigurator
                 int suma = 0;
                 string combustie = "";
                 string masina = "";
-                String solutie = "Dear customer " + txtBoxAdresa.Text + ", Total price for configured car ";
+                String solutie = "Dear " + txtBoxAdresa.Text + ", Total price for configured car ";
                 int culoare = 0;
                 int pretCombustie = 0;
 
@@ -69,7 +69,7 @@ namespace CarConfigurator
                     suma += 3000;
                     solutie += rdoBtnSkoda.Text;
                 }
-                masina += "Car: " + suma;
+                masina += "Car " + suma;
 
 
                 switch (cmbBoxCuloare.SelectedIndex)
@@ -113,7 +113,7 @@ namespace CarConfigurator
 
                 solutie += " is: " + suma + " euro\n";
                 solutie += "Options selected: " + masina+"\n";
-                solutie += " Color " + cmbBoxCuloare.Text+' '+ + culoare+"\n";
+                solutie += "Color " + cmbBoxCuloare.Text+' '+ + culoare+"\n";
                 solutie += "Combustion: " + combustie +  ' '+ pretCombustie;
 
                 lbl1Rezultate.Text = solutie;
@@ -125,9 +125,9 @@ namespace CarConfigurator
 
         private void txtBoxAdresa_TextChanged(object sender, EventArgs e)
         {
-            String adresa = "";
-            adresa += "Adresa: " + txtBoxAdresa + "\n";
-            lbl1Rezultate.Text = adresa;
+            String name = "";
+            name += "Name: " + txtBoxAdresa + "\n";
+            lbl1Rezultate.Text = name;
         }
 
         private void btn2Calculate_Click(object sender, EventArgs e)

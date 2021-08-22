@@ -39,7 +39,11 @@ namespace CarConfigurator
         }
         public static bool adresaEmpty(TextBox txt1)
         {
-            return txt1.Text.Equals("Introduceti adresa...") == true;
+            if (txt1.Text.Equals("") == true || txt1.Text.Equals("Customer") == true)
+            {
+                return true;
+            }
+            return false;
         }
 
         public static void resetSelection(RadioButton rdo1, RadioButton rdo2, RadioButton rdo3)
